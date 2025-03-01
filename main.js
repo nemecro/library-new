@@ -11,4 +11,3 @@ function addBook(title, author, pages, status){
     const book = new Book(title, author, pages, status);
     library.push(book);
 };
-

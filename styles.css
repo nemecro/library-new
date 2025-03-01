@@ -48,7 +48,47 @@
   }
 
   /* OWN STYLES */
+  :root {
+    --white: #F5F7F8;
+    --black: #45474B;
+    --green: #379777;
+    --yellow: #F4CE14;
+    --red: red;
+  }
+
   body {
     font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
     font-weight: normal;
+  }
+
+  main {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 6px;
+  }
+
+  thead th {
+    font-size: 1.25rem;
+  }
+
+  th, td {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid black;
+  }
+
+  tbody tr:nth-child(odd){
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  thead tr, tbody tr:nth-child(even){
+    background-color: var(--white);
   }
