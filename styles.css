@@ -46,3 +46,9 @@
   #root, #__next {
     isolation: isolate;
   }
+
+  /* OWN STYLES */
+  body {
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
+    font-weight: normal;
+  }
