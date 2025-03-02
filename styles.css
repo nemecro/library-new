@@ -67,6 +67,10 @@
     padding: 1.5rem;
   }
 
+  button:hover {
+    cursor: pointer;
+  }
+
   table {
     table-layout: fixed;
     border-collapse: collapse;
@@ -111,9 +115,7 @@
     padding: 1rem;
   }
 
-  #add-btn {
-    font-weight: 700;
-    font-size: 1.5rem;
+  .green-btn {
     padding: 0.5rem 1rem;
     background-color: var(--green);
     color: var(--white);
@@ -122,7 +124,47 @@
     transition: 250ms;
   }
 
-  #add-btn:hover{
-    cursor: pointer;
+  .green-btn:hover{
     background-color: var(--green-d);
+  }
+
+  #add-btn {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  #add-dialog {
+    width: 50%;
+    margin: auto;
+    border-radius: 6px;
+  }
+
+  #add-dialog header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #close-btn {
+    background-color: transparent;
+    border: 2px solid var(--black);
+    border-radius: 6px;
+    padding: 0.25rem;
+  }
+
+  #add-dialog p {
+    width: 250px;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #add-dialog div {
+    display: flex;
+    justify-content: center;
+  }
+
+  input, select {
+    width: 150px;
+    padding: 0.25rem;
   }
