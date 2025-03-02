@@ -45,10 +45,12 @@ function displayBooks(){
 };
 
 /* REMOVE LATER */
+/*
 addBook('War and Peace', 'Tolstoy', '500', 'read');
 addBook('Crime and Punishment', 'Dostoevsky', '750', 'not-read');
 
 displayBooks();
+*/
 /* END */
 
 const addBtn = document.querySelector('#add-btn');
@@ -70,8 +72,6 @@ confirmBtn.addEventListener('click', () => {
     addBook(formData.title, formData.author, formData.pages, formData.status);
     displayBooks();
 });
-
-addDialog.showModal();
 
 
 

@@ -49,12 +49,14 @@
 
   /* OWN STYLES */
   :root {
-    --white: #F5F7F8;
-    --black: #45474B;
-    --green: #379777;
-    --green-d: #23604c;
-    --yellow: #F4CE14;
-    --red: red;
+    --white: rgb(245, 247, 248);
+    --black: rgb(69, 71, 75);
+    --green: rgb(55, 151, 119);
+    --green-d: rgb(35, 96, 76);
+    --yellow: rgb(244, 206, 20);
+    --yellow-d: rgb(130, 110, 10);
+    --red: rgb(255, 0, 0);
+    --red-d: rgb(167, 2, 2);
   }
 
   body {
@@ -167,4 +169,25 @@
   input, select {
     width: 150px;
     padding: 0.25rem;
+  }
+
+  td.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .edit {
+    background-color: var(--yellow);
+    border: 2px solid var(--yellow-d);
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .delete {
+    background-color: var(--red);
+    border: 2px solid var(--red-d);
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
   }
