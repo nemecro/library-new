@@ -3,6 +3,13 @@ function Book(title, author, pages, status){
     this.author = author;
     this.pages = pages;
     this.status = status;
+    this.changeStatus = function(){
+        if (this.status === 'read'){
+            this.status = 'not-read';
+        } else {
+            this.status = 'read';
+        }
+    };
 };
 
 const library = [];
@@ -14,7 +21,7 @@ function addBook(title, author, pages, status){
 
 function removeBook(index){
     library.splice(index, 1);
-}
+};
 
 const table = document.querySelector('table');
 function displayBooks(){
@@ -53,6 +60,11 @@ function displayBooks(){
         const editImg = document.createElement('img');
         editImg.src = '/icons/edit.svg';
         editBtn.append(editImg);
+
+        editBtn.addEventListener('click', () => {
+            book.changeStatus();
+            displayBooks();
+        });
 
         const removeBtn = document.createElement('button');
         removeBtn.type = 'button';
