@@ -19,6 +19,7 @@ function displayBooks(){
     tableBody = document.createElement('tbody');
     library.forEach(book => {
         const row = document.createElement('tr');
+        row.setAttribute('data-id', library.indexOf(book));
 
         const title = document.createElement('th');
         title.setAttribute('scope', 'row');
@@ -37,20 +38,36 @@ function displayBooks(){
         } else {
             status.setAttribute('data-status', 'not-read');
         }
-        row.append(title, author, pages, status);
 
+        const actions = document.createElement('td');
+        const btnContainer = document.createElement('div');
+        btnContainer.classList.add('actions');
+        const editBtn = document.createElement('button');
+        editBtn.type = 'button';
+        editBtn.classList = 'edit';
+        const editImg = document.createElement('img');
+        editImg.src = '/icons/edit.svg';
+        editBtn.append(editImg);
+        const removeBtn = document.createElement('button');
+        removeBtn.type = 'button';
+        removeBtn.classList = 'delete';
+        const removeImg = document.createElement('img');
+        removeImg.src = '/icons/trash.svg';
+        removeBtn.append(removeImg);
+        btnContainer.append(editBtn, removeBtn);
+        actions.append(btnContainer);
+
+        row.append(title, author, pages, status, actions);
         tableBody.append(row);
     });
     table.append(tableBody);
 };
 
 /* REMOVE LATER */
-/*
 addBook('War and Peace', 'Tolstoy', '500', 'read');
 addBook('Crime and Punishment', 'Dostoevsky', '750', 'not-read');
 
 displayBooks();
-*/
 /* END */
 
 const addBtn = document.querySelector('#add-btn');

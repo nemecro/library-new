@@ -90,6 +90,7 @@
     text-align: center;
     padding: 1rem;
     border: 1px solid black;
+    height: 100%;
   }
 
   tbody tr:nth-child(odd){
@@ -171,7 +172,7 @@
     padding: 0.25rem;
   }
 
-  td.actions {
+  .actions {
     display: flex;
     justify-content: center;
     gap: 1rem;
