@@ -92,3 +92,13 @@
   thead tr, tbody tr:nth-child(even){
     background-color: var(--white);
   }
+
+  td[data-status="read"]{
+    color: var(--white);
+    background-color: var(--green);
+  }
+
+  td[data-status="not-read"]{
+    color: var(--white);
+    background-color: var(--red);
+  }
