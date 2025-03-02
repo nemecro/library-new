@@ -12,6 +12,10 @@ function addBook(title, author, pages, status){
     library.push(book);
 };
 
+function removeBook(index){
+    library.splice(index, 1);
+}
+
 const table = document.querySelector('table');
 function displayBooks(){
     let tableBody = document.querySelector('tbody');
@@ -42,18 +46,26 @@ function displayBooks(){
         const actions = document.createElement('td');
         const btnContainer = document.createElement('div');
         btnContainer.classList.add('actions');
+
         const editBtn = document.createElement('button');
         editBtn.type = 'button';
         editBtn.classList = 'edit';
         const editImg = document.createElement('img');
         editImg.src = '/icons/edit.svg';
         editBtn.append(editImg);
+
         const removeBtn = document.createElement('button');
         removeBtn.type = 'button';
         removeBtn.classList = 'delete';
         const removeImg = document.createElement('img');
         removeImg.src = '/icons/trash.svg';
         removeBtn.append(removeImg);
+
+        removeBtn.addEventListener('click', () => {
+            removeBook(row.getAttribute('data-id'));
+            displayBooks();
+        });
+
         btnContainer.append(editBtn, removeBtn);
         actions.append(btnContainer);
 
