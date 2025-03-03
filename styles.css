@@ -77,7 +77,7 @@
 
   
   body {
-    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
+    font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif; 
     font-weight: normal;
     background-color: var(--primary);
     color: var(--secondary-d);
@@ -151,8 +151,8 @@
   .green-btn {
     padding: 0.5rem 1rem;
     background-color: var(--green);
-    color: var(--white);
-    border: 3px solid var(--black-b);
+    color: var(--primary);
+    border: 3px solid var(--secondary-b);
     border-radius: 6px;
     transition: 250ms;
   }
@@ -170,6 +170,8 @@
     width: 50%;
     margin: auto;
     border-radius: 6px;
+    color: var(--secondary);
+    background-color: var(--primary);
   }
 
   #add-dialog header {
@@ -206,6 +208,8 @@
     padding: 0.25rem;
     border-radius: 6px;
     border: 1px solid var(--secondary-b);
+    background-color: var(--primary);
+    color: var(--secondary);
   }
 
   .actions {
