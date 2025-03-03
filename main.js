@@ -87,13 +87,6 @@ function displayBooks(){
     table.append(tableBody);
 };
 
-/* REMOVE LATER */
-addBook('War and Peace', 'Tolstoy', '500', 'read');
-addBook('Crime and Punishment', 'Dostoevsky', '750', 'not-read');
-
-displayBooks();
-/* END */
-
 const addBtn = document.querySelector('#add-btn');
 const addDialog = document.querySelector('#add-dialog');
 const form = document.querySelector('#form-dialog');
@@ -114,7 +107,28 @@ confirmBtn.addEventListener('click', () => {
     displayBooks();
 });
 
+const modeBtn = document.querySelector('#modeBtn');
+const modeImg = document.querySelector('#modeImg');
+const root = document.documentElement;
+let theme = 'light';
+const lightPath = '/icons/sun.svg';
+const darkPath = '/icons/moon.svg';
 
+const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+if (darkThemeMq.matches) {
+    theme = 'dark';
+    root.className = 'dark';
+    modeImg.src = darkPath;
+} else {
+    theme = 'dark';
+    root.className = 'light';
+    modeImg.src = lightPath;
+}
 
-
-
+function setTheme() {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    modeImg.src = theme === 'dark' ? darkPath : lightPath;
+    root.className = theme;
+}
+  
+modeBtn.addEventListener('click', setTheme)

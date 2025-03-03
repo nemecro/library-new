@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Internet library</h1>
+    <header id="top-header">
+        <div id="mode">
+            <button type="button" id="modeBtn">
+                <img src="" alt="Mode icon" id="modeImg">
+            </button>
+        </div>
+        <h1>Internet library</h1>
+        <button id="add-btn" type="button" class="green-btn">Add</button>
+    </header>
     <main>
         <table>
             <caption>Books summary</caption>
@@ -23,10 +31,6 @@
             <tbody>
             </tbody>
         </table>
-        <hr>
-        <section>
-            <button id="add-btn" type="button" class="green-btn">Add</button>
-        </section>
     </main>
 
     <dialog id="add-dialog">
@@ -35,7 +39,7 @@
             <h2>Add new book</h2>
             <div>
                 <button type="button" id="close-btn">
-                    <img src="/icons/x.svg" alt="Close symbol">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
             </div>
         </header>

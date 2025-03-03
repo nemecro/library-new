@@ -49,8 +49,6 @@
 
   /* OWN STYLES */
   :root {
-    --white: rgb(245, 247, 248);
-    --black: rgb(69, 71, 75);
     --green: rgb(55, 151, 119);
     --green-d: rgb(35, 96, 76);
     --yellow: rgb(244, 206, 20);
@@ -59,9 +57,40 @@
     --red-d: rgb(167, 2, 2);
   }
 
+  :root.dark {
+    --primary: rgb(0, 0, 0);
+    --secondary: rgb(209, 217, 232);
+
+    --secondary-b: rgb(155, 178, 224);
+    --secondary-c: rgb(148, 172, 219);
+    --secondary-d: rgb(216, 216, 228);
+  }
+  
+  :root.light {
+    --primary: rgb(245, 247, 248);
+    --secondary: rgb(69, 71, 75);
+
+    --secondary-b: rgb(54, 63, 81);
+    --secondary-c: rgb(95, 111, 143);
+    --secondary-d: rgb(17, 17, 18);
+  }
+
+  
   body {
     font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
     font-weight: normal;
+    background-color: var(--primary);
+    color: var(--secondary-d);
+  }
+
+  #top-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
   }
 
   main {
@@ -74,10 +103,11 @@
   }
 
   table {
+    color: var(--secondary);
     table-layout: fixed;
     border-collapse: collapse;
     width: 80%;
-    border: 1px solid black;
+    border: 1px solid var(--secondary-b);
     border-radius: 6px;
     margin: 1rem auto;
   }
@@ -89,17 +119,17 @@
   th, td {
     text-align: center;
     padding: 1rem;
-    border: 1px solid black;
+    border: 1px solid var(--secondary-b);
     height: 100%;
   }
 
   tbody tr:nth-child(odd){
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--secondary);
+    color: var(--primary);
   }
 
   thead tr, tbody tr:nth-child(even){
-    background-color: var(--white);
+    background-color: var(--primary);
   }
 
   td[data-status="read"]{
@@ -122,7 +152,7 @@
     padding: 0.5rem 1rem;
     background-color: var(--green);
     color: var(--white);
-    border: 3px solid var(--black);
+    border: 3px solid var(--black-b);
     border-radius: 6px;
     transition: 250ms;
   }
@@ -150,9 +180,13 @@
 
   #close-btn {
     background-color: transparent;
-    border: 2px solid var(--black);
+    border: 2px solid var(--secondary-b);
     border-radius: 6px;
     padding: 0.25rem;
+  }
+
+  #close-btn svg {
+    stroke: var(--secondary-b);
   }
 
   #add-dialog p {
@@ -170,6 +204,8 @@
   input, select {
     width: 150px;
     padding: 0.25rem;
+    border-radius: 6px;
+    border: 1px solid var(--secondary-b);
   }
 
   .actions {
@@ -192,3 +228,9 @@
     border-radius: 6px;
     padding: 0.25rem 0.5rem;
   }
+
+  #modeBtn {
+    background-color: transparent;
+    border: none;
+  }
+
